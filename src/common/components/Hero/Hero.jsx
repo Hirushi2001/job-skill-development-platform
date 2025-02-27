@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react';
 import location from '../../../assets/location.jpg';
 import search from '../../../assets/search.jpg';
-import bgImage from '../../../assets/bgim.jpg';
+import bgImage from '../../../assets/bgim3.jpg';
 import { AppContext } from '../../context/AppContext';
 
 function Hero() {
@@ -19,7 +19,7 @@ function Hero() {
   };
 
   return (
-    <div className="relative h-[600px] bg-cover bg-no-repeat" style={{ backgroundImage: `url(${bgImage})` }}>
+    <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] mx-4 sm:mx-6 lg:mx-8 bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
       <div className="absolute inset-0 bg-black opacity-40" />
       <div className="max-w-6xl mx-auto px-4 h-full flex flex-col justify-center items-center relative">
         <div className="w-full max-w-4xl text-center space-y-6">

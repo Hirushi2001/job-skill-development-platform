@@ -27,7 +27,8 @@
 
 
 
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+import { jobData } from '../../assets/asset';
 
 export const AppContext = createContext();
 
@@ -39,11 +40,23 @@ export const AppContextProvider = (props) => {
 
   const [isSearched, setIsSearched] = useState(false); // Add this line to initialize the state
 
+  const[jobs,setJobs]=useState([])
+  
+  // function to fetch job data
+
+  const  fetchJobs=async()=>{
+     setJobs(jobData)
+  }
+
+  useEffect (()=>{
+   fetchJobs()
+  },[])
+
   const value = {
-    setSearchFilter,
-    searchFilter,
+    setSearchFilter,searchFilter,
     isSearched, // Ensure this is added to the context value
-    setIsSearched, // And this too
+    setIsSearched, 
+    jobs,setJobs// And this too
   };
 
   return (
